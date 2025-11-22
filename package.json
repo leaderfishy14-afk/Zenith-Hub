@@ -1,0 +1,13 @@
+{
+  "name": "zenith-hub",
+  "version": "1.0.0",
+  "description": "Cyberware arcade static site server",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

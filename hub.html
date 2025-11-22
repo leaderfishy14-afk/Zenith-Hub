@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenith Hub - Cyberware Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="hub">
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar__toggle" id="sidebarToggle">
+      <span class="sidebar__title">Cyberware Filters</span>
+      <span>⚡</span>
+    </button>
+    <div class="sidebar__categories" id="categoryList"></div>
+  </aside>
+  <main class="hub__main">
+    <header class="hub__header">
+      <div>
+        <h1 class="hub__title">Zenith Hub</h1>
+        <p class="hub__subtitle">Jack into a curated set of browser-ready games. Launch with stealth overlays to keep only the action in view.</p>
+      </div>
+      <div class="hub__filters">
+        <input id="search" type="search" class="hub__search" placeholder="Search games or genres" />
+      </div>
+    </header>
+    <section id="gamesGrid" class="games__grid" aria-live="polite"></section>
+  </main>
+
+  <template id="gameCardTemplate">
+    <article class="game-card">
+      <p class="badge game-card__category"></p>
+      <h3 class="game-card__name"></h3>
+      <p class="game-card__description"></p>
+      <div class="game-card__cta">
+        <span class="badge">🕹️</span>
+        <button class="button button--ghost">Open</button>
+      </div>
+    </article>
+  </template>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal__body">
+      <div class="modal__header">
+        <h3 class="modal__title" id="modalTitle"></h3>
+        <button class="button button--ghost" id="closeModal">Close</button>
+      </div>
+      <div class="modal__content">
+        <div class="modal__embed" id="embedContainer">
+          <div class="modal__placeholder" id="embedPlaceholder">Click Run Game to start the embed. A stealth overlay hides external UI.</div>
+          <div class="modal__overlay"></div>
+          <iframe id="gameFrame" title="Game preview"></iframe>
+        </div>
+        <div class="modal__panel">
+          <p id="modalDescription"></p>
+          <div class="modal__actions">
+            <button class="button" id="runGame">Run game</button>
+            <button class="button button--ghost" id="fullscreen">Toggle fullscreen</button>
+          </div>
+          <div class="modal__status" id="modalStatus">Ready to deploy. Minor chance of Cardiff Council / Smoothwall filter interference.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/hub.js"></script>
+</body>
+</html>
