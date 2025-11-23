@@ -12,6 +12,15 @@ Cyberware-zenithhub is a static two-page website (no backend) built with plain H
 - Press the comma key (`,`) to jump to `hub.html`, the Cyberware arcade grid with 50+ browser-playable embeds.
 - Use the sidebar filters, search, and game modal to launch a title, go fullscreen, and retry if a filter blocks the stream.
 
+## Where to find the code
+- `index.html` – landing page markup that includes the educational intro and comma-key shortcut.
+- `hub.html` – arcade layout with the sidebar, grid of games, and modal scaffolding.
+- `assets/styles.css` – all styling (cyber UI, sidebar toggles, overlay treatment for embeds).
+- `assets/index.js` – landing page behavior that listens for the comma shortcut.
+- `assets/hub.js` – hub logic: search/filter handling, modal launchers, fullscreen/overlay controls, and random block message.
+- `server.js` – tiny static server used by `npm start`.
+- `package.json` – npm scripts and Node engine declaration.
+
 ## Local preview
 ### Run as a website
 Start the built-in static server (no dependencies) and open the local URLs:
